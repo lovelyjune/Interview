@@ -1,24 +1,24 @@
 PODS:
   - Alamofire (5.4.1)
-  - HandyJSON (5.0.2)
   - SnapKit (5.0.1)
+  - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
   - Alamofire
-  - HandyJSON
   - SnapKit
+  - Toast-Swift (~> 5.0.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
-    - HandyJSON
     - SnapKit
+    - Toast-Swift
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
-  HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: d788c753ec8d989eef0082212bdebec9fa90520b
+PODFILE CHECKSUM: 7b05d5ad22aeb12c0f20e924794092b6b0f11fcf
 
 COCOAPODS: 1.9.1

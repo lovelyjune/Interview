@@ -16,6 +16,9 @@
 		BD40B0E825BA724B00791B39 /* InterviewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD40B0E725BA724B00791B39 /* InterviewUITests.swift */; };
 		BD40B10525BA73F300791B39 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD40B10425BA73F300791B39 /* RootTabBarController.swift */; };
 		BD40B11325BA751300791B39 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD40B11225BA751300791B39 /* HomeViewController.swift */; };
+		BD40B13825BA817300791B39 /* ApiRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD40B13725BA817200791B39 /* ApiRequestManager.swift */; };
+		BD40B1B325BAB55F00791B39 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD40B1B225BAB55F00791B39 /* HomeCell.swift */; };
+		BD40B1D225BACA3800791B39 /* NetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD40B1D125BACA3800791B39 /* NetModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,9 @@
 		BD40B0E925BA724B00791B39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD40B10425BA73F300791B39 /* RootTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		BD40B11225BA751300791B39 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		BD40B13725BA817200791B39 /* ApiRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRequestManager.swift; sourceTree = "<group>"; };
+		BD40B1B225BAB55F00791B39 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		BD40B1D125BACA3800791B39 /* NetModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetModel.swift; sourceTree = "<group>"; };
 		E89C393000FCB7D573CAAF7C /* Pods_InterviewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InterviewTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -165,6 +171,7 @@
 		BD40B10F25BA74EE00791B39 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				BD40B13525BA815400791B39 /* General */,
 				BD40B11025BA74F900791B39 /* Main */,
 			);
 			path = Class;
@@ -181,9 +188,51 @@
 		BD40B11125BA74FE00791B39 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				BD40B11225BA751300791B39 /* HomeViewController.swift */,
+				BD40B1BA25BAB5A200791B39 /* Model */,
+				BD40B1B125BAB54900791B39 /* View */,
+				BD40B1B025BAB54200791B39 /* Control */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		BD40B13525BA815400791B39 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				BD40B13625BA815B00791B39 /* Manager */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		BD40B13625BA815B00791B39 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				BD40B13725BA817200791B39 /* ApiRequestManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		BD40B1B025BAB54200791B39 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				BD40B11225BA751300791B39 /* HomeViewController.swift */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		BD40B1B125BAB54900791B39 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BD40B1B225BAB55F00791B39 /* HomeCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BD40B1BA25BAB5A200791B39 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BD40B1D125BACA3800791B39 /* NetModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,7 +246,7 @@
 				BD40B0BE25BA724800791B39 /* Sources */,
 				BD40B0BF25BA724800791B39 /* Frameworks */,
 				BD40B0C025BA724800791B39 /* Resources */,
-				07B5B79A97C782FBABCC05C3 /* [CP] Embed Pods Frameworks */,
+				FC5DFF4147F6D4B8A3300DAE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -235,7 +284,7 @@
 				BD40B0DF25BA724B00791B39 /* Sources */,
 				BD40B0E025BA724B00791B39 /* Frameworks */,
 				BD40B0E125BA724B00791B39 /* Resources */,
-				95B6DFBDD89883FBEBF881C5 /* [CP] Embed Pods Frameworks */,
+				F95FE569B08431EE12673B3D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -315,23 +364,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		07B5B79A97C782FBABCC05C3 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Interview/Pods-Interview-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Interview/Pods-Interview-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Interview/Pods-Interview-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		1CEEBA38BA990EAEE909EA15 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -352,23 +384,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		95B6DFBDD89883FBEBF881C5 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Interview-InterviewUITests/Pods-Interview-InterviewUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Interview-InterviewUITests/Pods-Interview-InterviewUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Interview-InterviewUITests/Pods-Interview-InterviewUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B5548ADE3D6BD602B8800A5D /* [CP] Check Pods Manifest.lock */ = {
@@ -415,6 +430,40 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F95FE569B08431EE12673B3D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Interview-InterviewUITests/Pods-Interview-InterviewUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Interview-InterviewUITests/Pods-Interview-InterviewUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Interview-InterviewUITests/Pods-Interview-InterviewUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC5DFF4147F6D4B8A3300DAE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Interview/Pods-Interview-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Interview/Pods-Interview-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Interview/Pods-Interview-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -422,9 +471,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD40B13825BA817300791B39 /* ApiRequestManager.swift in Sources */,
 				BD40B10525BA73F300791B39 /* RootTabBarController.swift in Sources */,
 				BD40B0C625BA724800791B39 /* AppDelegate.swift in Sources */,
 				BD40B11325BA751300791B39 /* HomeViewController.swift in Sources */,
+				BD40B1B325BAB55F00791B39 /* HomeCell.swift in Sources */,
+				BD40B1D225BACA3800791B39 /* NetModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,6 +637,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Interview/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -605,6 +658,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Interview/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
