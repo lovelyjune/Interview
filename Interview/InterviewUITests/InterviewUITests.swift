@@ -27,7 +27,7 @@ class InterviewUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
         
-        let exp = self.expectation(description: "aaa")
+        let exp = self.expectation(description: "testTableView")
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 12.0) { [weak self] in
             if let _ = self
