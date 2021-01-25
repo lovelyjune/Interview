@@ -34,7 +34,10 @@ class HomeViewController: UIViewController
     private func initData()
     {
         //获取旧数据
-        allModelArr = NetModel.getLocalModelArr()
+        if let localModelArr = NetModel.getLocalModelArr()
+        {
+            allModelArr = localModelArr
+        }
         self.mainTableView.reloadData()
         
         //启动5秒后请求接口 之后循环每隔5秒都要调用一次。
@@ -114,7 +117,10 @@ class HomeViewController: UIViewController
     //到最新的那条
     @objc private func toNewAction()
     {
-        self.allModelArr = NetModel.getLocalModelArr()
+        if let localModelArr = NetModel.getLocalModelArr()
+        {
+            allModelArr = localModelArr
+        }
         mainTableView.reloadData()
         if allModelArr.count > 0
         {
@@ -145,14 +151,17 @@ class HomeViewController: UIViewController
             netModel.result = responseDict?.debugDescription
             
             //保存在本地
-            var oldModelArr = NetModel.getLocalModelArr()
-            oldModelArr.append(netModel)
-            NetModel.createSaveAllModelArr(modelArr: oldModelArr)
+            if var oldModelArr = NetModel.getLocalModelArr()
+            {
+                oldModelArr.append(netModel)
+                NetModel.createSaveAllModelArr(modelArr: oldModelArr)
+            }
             
             self.view.makeToast("有新的请求成功")
             
             //界面没有数据的时候刷新表格，有数据的话就吐司提示
-            if self.allModelArr.count == 0
+            if self.allModelArr.count == 0,
+               let oldModelArr = NetModel.getLocalModelArr()
             {
                 self.allModelArr = oldModelArr
                 self.mainTableView.reloadData()

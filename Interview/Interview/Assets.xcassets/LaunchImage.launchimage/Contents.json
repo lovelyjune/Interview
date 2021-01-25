@@ -2,7 +2,6 @@
   "images" : [
     {
       "extent" : "full-screen",
-      "filename" : "开屏1242x2688.png",
       "idiom" : "iphone",
       "minimum-system-version" : "12.0",
       "orientation" : "portrait",
@@ -11,7 +10,6 @@
     },
     {
       "extent" : "full-screen",
-      "filename" : "开屏828x1792.png",
       "idiom" : "iphone",
       "minimum-system-version" : "12.0",
       "orientation" : "portrait",
@@ -20,7 +18,6 @@
     },
     {
       "extent" : "full-screen",
-      "filename" : "开屏1125x2436.png",
       "idiom" : "iphone",
       "minimum-system-version" : "11.0",
       "orientation" : "portrait",
@@ -29,7 +26,6 @@
     },
     {
       "extent" : "full-screen",
-      "filename" : "开屏1242x2208.png",
       "idiom" : "iphone",
       "minimum-system-version" : "8.0",
       "orientation" : "portrait",
@@ -38,7 +34,6 @@
     },
     {
       "extent" : "full-screen",
-      "filename" : "开屏750x1334.png",
       "idiom" : "iphone",
       "minimum-system-version" : "8.0",
       "orientation" : "portrait",

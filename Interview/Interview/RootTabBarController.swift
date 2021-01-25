@@ -46,7 +46,6 @@ class RootTabBarController: UITabBarController,UITabBarControllerDelegate
         let nav = UINavigationController(rootViewController: vc)
 
         self.VCArr.append(nav)
-
     }
 
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem)

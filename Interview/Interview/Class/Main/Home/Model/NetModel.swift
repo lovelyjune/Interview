@@ -41,16 +41,23 @@ class NetModel: NSObject , NSCoding {
         super.init()
     }
 
-    static func createSaveAllModelArr(modelArr:Array<NetModel>)
+    @discardableResult static func createSaveAllModelArr(modelArr:Array<NetModel>?) -> Bool
     {
-        var path = NSTemporaryDirectory()
-        path = path + "/NetModel.data"
+        if let modelArr = modelArr
+        {
+            var path = NSTemporaryDirectory()
+            path = path + "/NetModel.data"
 
-        //归档
-        NSKeyedArchiver.archiveRootObject(modelArr, toFile: path)
+            //归档
+            return NSKeyedArchiver.archiveRootObject(modelArr, toFile: path)
+        }
+        else
+        {
+            return false
+        }
     }
 
-    static func getLocalModelArr() -> Array<NetModel>
+    static func getLocalModelArr() -> Array<NetModel>?
     {
         var path = NSTemporaryDirectory()
         path = path + "/NetModel.data"
@@ -62,16 +69,16 @@ class NetModel: NSObject , NSCoding {
         {
             return model
         }
-        return Array()
+        return nil
     }
     
-    static func removeLocalModelArr()
+    @discardableResult static func removeLocalModelArr() -> Bool
     {
         var path = NSTemporaryDirectory()
         path = path + "/NetModel.data"
 
         //归档
-        NSKeyedArchiver.archiveRootObject([], toFile: path)
+        return NSKeyedArchiver.archiveRootObject([], toFile: path)
     }
 
     

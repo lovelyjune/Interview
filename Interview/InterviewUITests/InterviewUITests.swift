@@ -23,10 +23,49 @@ class InterviewUITests: XCTestCase {
     }
 
     func testExample() throws {
-        // UI tests must launch the application that they test.
+        
         let app = XCUIApplication()
         app.launch()
+        
+        let exp = self.expectation(description: "aaa")
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 12.0) { [weak self] in
+            if let _ = self
+            {
+                let newBtn = app.buttons.staticTexts["to newest"]
+                newBtn.tap()
 
+                XCTAssert(app.tables.cells.count > 0)
+            }
+            else
+            {
+                XCTFail()
+            }
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 14.0) { [weak self] in
+            if let _ = self
+            {
+                let clearBtn = app.buttons.staticTexts["clear all"]
+                clearBtn.tap()
+
+                XCTAssertEqual(app.tables.cells.count, 0)
+                
+                exp.fulfill()
+            }
+            else
+            {
+                XCTFail()
+            }
+        }
+        
+        self.waitForExpectations(timeout: 20.0) { (error) in
+            if let error = error
+            {
+                print("Error: \(error.localizedDescription)")
+            }
+        }
+        
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
